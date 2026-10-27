@@ -32,6 +32,9 @@ jobs:
             Dockerfile \
             .dockerignore \
             pom.xml \
+            mvnw \
+            mvnw.cmd \
+            .mvn \
             src \
             "${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:~/cloudnative/ms-rabbit-admin/"
 
@@ -41,6 +44,8 @@ jobs:
             "${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}" << 'EOF'
 
           cd ~/cloudnative/ms-rabbit-admin
+
+          chmod +x mvnw
 
           docker build -t ms-rabbit-admin .
 
