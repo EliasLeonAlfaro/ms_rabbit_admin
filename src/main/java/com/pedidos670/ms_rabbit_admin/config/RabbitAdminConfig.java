@@ -9,15 +9,9 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitAdminConfig {
 
     @Bean
-    public RabbitAdmin rabbitAdmin(
-            ConnectionFactory connectionFactory
-    ) {
-
-        RabbitAdmin rabbitAdmin =
-                new RabbitAdmin(connectionFactory);
-
+    public RabbitAdmin rabbitAdmin(ConnectionFactory connectionFactory) {
+        RabbitAdmin rabbitAdmin = new RabbitAdmin(connectionFactory);
         rabbitAdmin.setAutoStartup(true);
-
         return rabbitAdmin;
     }
 }
